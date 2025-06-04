@@ -75,9 +75,11 @@ async def console_output_task():
     while True:
         processed_data = await processed_data_queue.get()
         # 標準出力にデータを表示
-        print(f"時刻: {processed_data['timestamp']:.3f}s")
-        print(f"平均値: {processed_data['mean']:.3f}")
-        print(f"標準偏差: {processed_data['std']:.3f}")
+        # print(f"時刻: {processed_data['timestamp']:.3f}s")
+        # print(f"平均値: {processed_data['mean']:.3f}")
+        # print(f"標準偏差: {processed_data['std']:.3f}")
+        # print("-" * 50)
+        print(processed_data["raw_data"])
         print("-" * 50)
         processed_data_queue.task_done()
 
